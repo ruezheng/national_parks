@@ -23,5 +23,4 @@ Things you may want to cover:
 
 * ...
 
-* ![Screen Shot 2022-05-11 at 9 46 29 PM](https://user-images.githubusercontent.com/99001315/167988098-7c45ea01-55fb-4ef1-a148-f55baa42d81f.png)
-
+![Screen Shot 2022-05-12 at 11 36 43 AM](https://user-images.githubusercontent.com/99001315/168135424-083d4c57-3b8f-4cbb-967b-52cf089a372d.png)
