@@ -22,6 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+<img width="654" alt="Screen Shot 2022-05-12 at 1 21 43 PM" src="https://user-images.githubusercontent.com/99001315/168152434-af9ac8fa-1416-45eb-a5bb-ebcacfb46727.png">
 
-![Screen Shot 2022-05-12 at 12 19 08 PM](https://user-images.githubusercontent.com/99001315/168142428-8dea6b4c-0388-44fc-a3f5-9741c00355a3.png)
+
 
