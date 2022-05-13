@@ -10,14 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_11_181514) do
+ActiveRecord::Schema.define(version: 2022_05_12_213628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "hikes", force: :cascade do |t|
+    t.string "name"
+    t.float "length_miles"
+    t.boolean "open"
+    t.integer "park_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "parks", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.decimal "fee"
     t.boolean "national_park_pass"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
