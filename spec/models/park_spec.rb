@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+#  RSpec.describe Park type: :model do   # type: :model isn't necessary. It is already read as a model test because it's in the models folder
 RSpec.describe Park do
   let!(:zion) { Park.create!(name: 'Zion National Park', location: 'Utah', national_park_pass: true, fee: 20.00) }
   let!(:yellowstone) { Park.create!(name: 'Yellowstone National Park', location: 'Wyoming', national_park_pass: true, fee: 35.00) }

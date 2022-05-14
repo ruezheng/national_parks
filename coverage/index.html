@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-13T18:14:19-06:00">2022-05-13T18:14:19-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-14T17:48:26-06:00">2022-05-14T17:48:26-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>59</b> relevant lines,
-    <span class="green"><b>59</b> lines covered</span> and
+    <b>60</b> relevant lines,
+    <span class="green"><b>60</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -82,7 +82,7 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#144f89ca3486a87d6b7427b3aae9bdf9c6990ceb" class="src_link" title="app/controllers/parks_controller.rb">app/controllers/parks_controller.rb</a></td>
+            <td class="strong t-file__name"><a href="#a044d20a738924dc8d2698e7ffd7c1642fb28d73" class="src_link" title="app/controllers/hikes_controller.rb">app/controllers/hikes_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">5</td>
             <td class="cell--number">3</td>
@@ -282,9 +282,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#3d574653cfc1a63e555c314daff602ca6173bd86" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">5</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -360,9 +360,9 @@
 </div>
 
       
-        <div class="source_table" id="144f89ca3486a87d6b7427b3aae9bdf9c6990ceb">
+        <div class="source_table" id="a044d20a738924dc8d2698e7ffd7c1642fb28d73">
   <div class="header">
-    <h3>app/controllers/parks_controller.rb</h3>
+    <h3>app/controllers/hikes_controller.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -393,7 +393,7 @@
 
             
 
-            <code class="ruby">class ParksController &lt; ApplicationController</code>
+            <code class="ruby">class HikesController &lt; ApplicationController</code>
           </li>
         </div>
       
@@ -415,7 +415,7 @@
 
             
 
-            <code class="ruby">		@parks = Park.all</code>
+            <code class="ruby">    @hikes = Hike.all</code>
           </li>
         </div>
       
@@ -3209,8 +3209,8 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>5</b> relevant lines.
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3255,24 +3255,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="4">
+            
             
 
             
 
-            <code class="ruby">  get &#39;/parks&#39;, to: &#39;parks#index&#39;</code>
+            <code class="ruby">  # get &#39;/&#39;, to: &#39;welcome#index&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="5">
+            
             
 
             
 
-            <code class="ruby">  get &#39;/parks/:id&#39;, to: &#39;parks#show&#39;</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3283,7 +3283,7 @@
 
             
 
-            <code class="ruby">  get &#39;/hikes&#39;, to: &#39;hikes#index&#39;</code>
+            <code class="ruby">  get &#39;/parks&#39;, to: &#39;parks#index&#39;</code>
           </li>
         </div>
       
@@ -3294,12 +3294,100 @@
 
             
 
-            <code class="ruby">  # get &#39;/parks/:id&#39;, to: &#39;parks#show&#39;</code>
+            <code class="ruby">  # get &#39;/parks/new&#39;, to: &#39;parks#new&#39;</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">  # post &#39;/parks&#39;, to: &#39;parks#create&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  get &#39;/parks/:id&#39;, to: &#39;parks#show&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">  # get &#39;/parks/:id/edit&#39;, to: &#39;parks#edit&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">  # patch &#39;/parks/:id&#39;, to: &#39;parks#update&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">  # delete &#39;/parks/:id&#39;, to: &#39;parks#destroy&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  get &#39;/hikes&#39;, to: &#39;hikes#index&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  get &#39;/hikes/:id&#39;, to: &#39;hikes#show&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
             
             
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "parks index page", type: :feature do # TODO: Is this good formatting? I wasn't sure if it's more important to have the attributes lied up or have no spaces after the create
+RSpec.describe "the parks index page", type: :feature do # TODO: Is this good formatting? Is it more important to have the attributes lied up or have no spaces after the create
   let(:zion) { Park.create!(      name:               'Zion National Park',
                                   location:           'Utah',
                                   national_park_pass: true,
@@ -14,32 +14,32 @@ RSpec.describe "parks index page", type: :feature do # TODO: Is this good format
                                   national_park_pass: false,
                                   fee:                15.00) }
 
-  let!(:hike1) { Hike.create!(name: 'Hidden Canyon',
+  let!(:hike_1) { Hike.create!(name: 'Hidden Canyon',
                               length_miles: 3,
                               park_id: zion.id,
                               open: true) }
-  let!(:hike2) { Hike.create!(name: 'Angels Landing',
+  let!(:hike_2) { Hike.create!(name: 'Angels Landing',
                               length_miles: 5.4,
                               park_id: zion.id,
                               open: true) }
-  let!(:hike3) { Hike.create!(name: 'Upper Geysey Basin',
+  let!(:hike_3) { Hike.create!(name: 'Upper Geysey Basin',
                               length_miles: 4.9,
                               park_id: yellowstone.id,
                               open: false) }
-  let!(:hike4) { Hike.create!(name: 'Fairy Falls Trail',
+  let!(:hike_4) { Hike.create!(name: 'Fairy Falls Trail',
                               length_miles: 4.8,
                               park_id: yellowstone.id,
                               open: true) }
-  let!(:hike5) { Hike.create!(name: 'Half Dome',
+  let!(:hike_5) { Hike.create!(name: 'Half Dome',
                               length_miles: 16,
                               park_id: yosemite.id,
                               open: true) }
-  let!(:hike6) { Hike.create!(name: 'Yosemite Falls',
+  let!(:hike_6) { Hike.create!(name: 'Yosemite Falls',
                               length_miles: 7.2,
                               park_id: yosemite.id,
                               open: true) }
 
-  xit "can see all parks attributes: name, location, national_park_pass, and fee" do
+  xit "can see all parks and their attributes: name, location, national_park_pass, and fee" do
     visit "/parks"
 
     expect(page).to have_content(zion.name)
