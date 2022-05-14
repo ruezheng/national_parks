@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_12_213628) do
+ActiveRecord::Schema.define(version: 2022_05_14_002340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,18 +19,16 @@ ActiveRecord::Schema.define(version: 2022_05_12_213628) do
     t.string "name"
     t.float "length_miles"
     t.boolean "open"
-    t.integer "park_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "parks", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.decimal "fee"
+    t.float "fee"
     t.boolean "national_park_pass"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.bigint "parks_id"
+    t.index ["parks_id"], name: "index_parks_on_parks_id"
   end
 
+  add_foreign_key "parks", "parks", column: "parks_id"
 end
