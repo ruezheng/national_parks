@@ -14,21 +14,16 @@ RSpec.describe 'the hikes show page' do
 
   it "displays all attributes of hike_1: name, length_miles, open:, and park_id" do
     visit "/hikes/#{hike_1.id}"
-    # save_and_open_page
+    save_and_open_page
 
     expect(page).to have_content(hike_1.name)
     expect(page).to have_content(hike_1.length_miles)
     expect(page).to have_content(hike_1.open)
     expect(page).to have_content(hike_1.park_id)
-  end
 
-  it "displays all attributes of each hike_2: name, length_miles, open:, and park_id" do
-    visit "/hikes/#{hike_2.id}"
-    # save_and_open_page
-
-    expect(page).to have_content(hike_2.name)
-    expect(page).to have_content(hike_2.length_miles)
-    expect(page).to have_content(hike_2.open)
-    expect(page).to have_content(hike_2.park_id)
+    expect(page).to_not have_content(hike_3.name)
+    expect(page).to_not have_content(hike_3.length_miles)
+    expect(page).to_not have_content(hike_3.open)
+    expect(page).to_not have_content(hike_3.park_id)
   end
 end
