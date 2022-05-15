@@ -1,6 +1,6 @@
 class ParksController < ApplicationController
   def index
-		@parks = Park.all
+		@parks = Park.order_by_time_created
   end
 
   def show
