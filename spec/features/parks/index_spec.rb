@@ -27,7 +27,7 @@ RSpec.describe "the parks index page", type: :feature do # TODO: Is this good fo
 
   it "orders all parks by most recently created first and displays created_at timestamp next to name of each park" do
     visit "/parks"
-    save_and_open_page
+    # save_and_open_page
 #
     expect(page).to have_content(zion.name)
     expect(page).to have_content(zion.created_at)

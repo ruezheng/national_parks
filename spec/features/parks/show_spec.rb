@@ -26,4 +26,12 @@ RSpec.describe 'the parks show page' do
     expect(page).to_not have_content("National Park Pass Requirement: #{yellowstone.national_park_pass}")
     expect(page).to_not have_content("Fee: #{yellowstone.fee}")
   end
+
+  describe '#count_hikes' do
+    visit "/parks/#{zion.id}"
+
+    it 'can see a count of the number of hikes associated with the park' do
+      expect(Park.count_hikes).to eq(2)
+    end
+  end
 end
