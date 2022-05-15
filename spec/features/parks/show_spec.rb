@@ -12,9 +12,9 @@ RSpec.describe 'the parks show page' do
   let!(:hike_5) { Hike.create!(name: 'Half Dome', length_miles: 16, park_id: yosemite.id, open: true) }
   let!(:hike_6) { Hike.create!(name: 'Yosemite Falls', length_miles: 7.2, park_id: yosemite.id, open: true) }
 
-  xit "can see attributes of each park: name, location, national_park_pass, and fee" do
+  xit "can see all attributes of each park: name, location, national_park_pass, and fee" do
     visit "/parks/#{zion.id}"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content(zion.name)
     expect(page).to have_content("Location: #{zion.location}")
