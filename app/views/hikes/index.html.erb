@@ -2,8 +2,8 @@
 
 <% @hikes.each do |hike| %>
   <h3><%= hike.name %></h3>
-  <p>Length (miles): <%= hike.length_miles %></p>
-  <p>Trail Open: <%= hike.open %></p>
+  <p>Length: <%= hike.length_miles %> miles</p>
+  <p>Open: <%= hike.open %></p>
   <p>Park ID: <%= hike.park_id %></p>
   <br>
 <% end %>

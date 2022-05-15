@@ -39,8 +39,9 @@ RSpec.describe "the parks index page", type: :feature do # TODO: Is this good fo
                               park_id: yosemite.id,
                               open: true) }
 
-  xit "can see all parks and their attributes: name, location, national_park_pass, and fee" do
+  it "can see all parks and their attributes: name, location, national_park_pass, and fee" do
     visit "/parks"
+    # save_and_open_page
 
     expect(page).to have_content(zion.name)
     expect(page).to have_content(yellowstone.name)

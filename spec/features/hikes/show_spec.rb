@@ -12,9 +12,9 @@ RSpec.describe 'the hikes show page' do
   let!(:hike_5) { Hike.create!(name: 'Half Dome', length_miles: 16, park_id: yosemite.id, open: true) }
   let!(:hike_6) { Hike.create!(name: 'Yosemite Falls', length_miles: 7.2, park_id: yosemite.id, open: true) }
 
-  it "displays all attributes of each hike: name, length_miles, open:, and park_id" do
+  it "displays all attributes of hike_1: name, length_miles, open:, and park_id" do
     visit "/hikes/#{hike_1.id}"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content(hike_1.name)
     expect(page).to have_content(hike_1.length_miles)
@@ -22,4 +22,13 @@ RSpec.describe 'the hikes show page' do
     expect(page).to have_content(hike_1.park_id)
   end
 
+  it "displays all attributes of each hike_2: name, length_miles, open:, and park_id" do
+    visit "/hikes/#{hike_2.id}"
+    # save_and_open_page
+
+    expect(page).to have_content(hike_2.name)
+    expect(page).to have_content(hike_2.length_miles)
+    expect(page).to have_content(hike_2.open)
+    expect(page).to have_content(hike_2.park_id)
+  end
 end

@@ -12,7 +12,7 @@ RSpec.describe 'the hikes index page' do
   let!(:hike_5) { Hike.create!(name: 'Half Dome', length_miles: 16, park_id: yosemite.id, open: true) }
   let!(:hike_6) { Hike.create!(name: 'Yosemite Falls', length_miles: 7.2, park_id: yosemite.id, open: true) }
 
-  xit "displays all hikes and their attributes: name, length_miles, open:, and park_id" do
+  it "displays all hikes and their attributes: name, length_miles, open:, and park_id" do
     visit "/hikes"
     # save_and_open_page
 
