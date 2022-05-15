@@ -7,7 +7,4 @@ class HikesController < ApplicationController
     @hike = Hike.find(params[:id])
   end
 
-  def redirect
-    redirect_to ""
-  end
 end

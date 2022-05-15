@@ -34,17 +34,25 @@ RSpec.describe 'the parks show page' do
     expect(page).to have_content(zion.count_hikes)
   end
 
-  it "displays hikes index link that routes to the hikes index page" do
+  it "can see a link at the top of the page that takes me to the Park Index" do
     visit '/parks'
 
-    click_on('Hikes')
+    click_on('Explore Hikes')
     expect(current_path).to eq('/hikes')
   end
 
-  it "displays parks index link that routes to the parks index page" do
+  it "can see a link at the top of the page that takes me to the Park Index" do
     visit '/hikes'
 
-    click_on('National Parks')
+    click_on('Explore National Parks')
     expect(current_path).to eq('/parks')
+  end
+
+
+  it "can see a link to take me to that park's 'hikes' page " do
+    visit "/parks/#{zion.id}"
+
+    click_on('Find a Hike')
+    expect(current_path).to eq("/parks/#{zion.id}/hikes")
   end
 end

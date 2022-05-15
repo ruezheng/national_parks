@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   get '/parks', to: 'parks#index'
   get '/parks/:id', to: 'parks#show'
+
   get '/parks/:park_id/hikes', to: 'park_hikes#index'
+
   get '/hikes', to: 'hikes#index'
   get '/hikes/:id', to: 'hikes#show'
 

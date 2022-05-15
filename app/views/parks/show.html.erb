@@ -1,8 +1,10 @@
-<ul><a href="/hikes">Hikes</a></ul>
-<ul><a href="/parks">National Parks</a></ul>
+<a href="/hikes">Explore Hikes</a><br>
+<a href="/parks">Explore National Parks</a>
 
 <h1><%= @park.name %></h1>
 <p>Location: <%= @park.location %></p>
 <p>Number of Hikes: <%= @park.count_hikes %></p>
 <p>National Park Pass Required: <%= @park.national_park_pass %></p>
 <p>Fee: <%= @park.fee %></p>
+
+<a href="/parks/<%= @park.id %>/hikes">Find a Hike</a>

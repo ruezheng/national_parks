@@ -1,8 +1,8 @@
-<ul><a href="/hikes">Hikes</a></ul>
-<ul><a href="/parks">National Parks</a></ul>
+<a href="/hikes">Explore Hikes</a><br>
+<a href="/parks">Explore National Parks</a>
 
 <h1>National Parks</h1><br>
 
 <% @parks.each do |park| %>
-	<h3><%= park.name %> <span style="font-size: 14px;"><%= park.created_at %></span></h3>
+	<h3><%= link_to park.name, "/parks/#{park.id}" %> <span style="font-size: 14px;"><%= park.created_at %></span></h3>
 <% end %>

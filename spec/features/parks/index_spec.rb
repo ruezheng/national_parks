@@ -39,20 +39,14 @@ RSpec.describe "the parks index page", type: :feature do # TODO: Is this good fo
     expect(page).to have_content(moab.created_at)
   end
 
-  #   User Story 8, Child Index Link
-  #
-  # As a visitor
-  # When I visit any page on the site
-  # Then I see a link at the top of the page that takes me to the Child Index
-
-  it "displays hikes index link that routes to the hikes index page" do
+  it "can see a link at the top of the page that takes me to the Park Index" do
     visit '/parks'
 
     click_on('Hikes')
     expect(current_path).to eq('/hikes')
   end
 
-  it "displays parks index link that routes to the parks index page" do
+  it "can see a link at the top of the page that takes me to the Park Index" do
     visit '/hikes'
 
     click_on('National Parks')

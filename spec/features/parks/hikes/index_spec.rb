@@ -20,23 +20,17 @@ RSpec.describe 'Park hikes index' do
     expect(page).to have_content(hike_2.park_id)
   end
 
-  it "displays hikes index link that routes to the hikes index page" do
+  it "can see a link at the top of the page that takes me to the Park Index" do
     visit '/parks'
 
-    click_on('Hikes')
+    click_on('Explore Hikes')
     expect(current_path).to eq('/hikes')
   end
 
-  it "displays parks index link that routes to the parks index page" do
+  it "can see a link at the top of the page that takes me to the Park Index" do
     visit '/hikes'
 
-    click_on('National Parks')
+    click_on('Explore National Parks')
     expect(current_path).to eq('/parks')
   end
-
-#   User Story 10, Parent Child Index Link
-#
-# As a visitor
-# When I visit a parent show page ('/parents/:id')
-# Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
 end
