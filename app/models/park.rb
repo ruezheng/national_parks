@@ -8,4 +8,7 @@ class Park < ApplicationRecord
     order('created_at desc')
   end
 
+  def count_hikes
+    self.hikes.count
+  end
 end

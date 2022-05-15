@@ -27,9 +27,15 @@ RSpec.describe Park do
     it { should allow_value(false).for(:national_park_pass) }
   end
 
-  describe 'class methods' do
-    it '.order_by_time_created' do
+  describe '.order_by_time_created' do
+    it 'displays parks ordered by most recently created first' do
       expect(Park.order_by_time_created.to_a).to eq [zion, moab, yosemite, yellowstone]
+    end
+  end
+
+  describe '#count_hikes' do
+    it 'can see a count of the number of hikes associated with the park' do
+      expect(zion.count_hikes).to eq(2)
     end
   end
 end
