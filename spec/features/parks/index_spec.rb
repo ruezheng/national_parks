@@ -11,13 +11,35 @@ RSpec.describe "the parks index page", type: :feature do # TODO: Is this good fo
   let!(:hike_4) { Hike.create!(name: 'Fairy Falls Trail', length_miles: 4.8, park_id: yellowstone.id, open: true) }
   let!(:hike_5) { Hike.create!(name: 'Half Dome', length_miles: 16, park_id: yosemite.id, open: true) }
   let!(:hike_6) { Hike.create!(name: 'Yosemite Falls', length_miles: 7.2, park_id: yosemite.id, open: true) }
-  
-  it "can see all parks and their attributes: name, location, national_park_pass, and fee" do
+
+  it "displays the names of all parks" do
     visit "/parks"
-    # save_and_open_page
+    save_and_open_page
 
     expect(page).to have_content(zion.name)
     expect(page).to have_content(yellowstone.name)
     expect(page).to have_content(yosemite.name)
+  end
+
+# User Story 6, Parent Index sorted by Most Recently Created
+#
+# As a visitor
+# When I visit the parent index,
+# I see that records are ordered by most recently created first
+# And next to each of the records I see when it was created
+
+  it "displays date created information of all parks" do
+    visit "/parks"
+    # save_and_open_page
+
+    expect(page).to have_content(zion.name)
+    expect(page).to have_content(zion.created_)
+  end
+
+  it "orders all parks by most recently created first" do
+    visit "/parks"
+    # save_and_open_page
+
+
   end
 end

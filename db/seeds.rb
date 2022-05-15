@@ -12,8 +12,8 @@
 # and we can also call song.artist
 
 
-# Song.destroy_all
-# Artist.destroy_all
+# Hike.destroy_all
+# Park.destroy_all
 #
 # prince = Artist.create!(name: 'Prince')
 # rtj = Artist.create!(name: 'Run The Jewels')

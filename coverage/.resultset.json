@@ -275,152 +275,6 @@
           null
         ]
       },
-      "/Users/ruezheng/turing/2module/projects/national_parks/spec/features/hikes/show_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          2,
-          2,
-          null,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/ruezheng/turing/2module/projects/national_parks/spec/features/parks/hikes/index_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          2,
-          2,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/ruezheng/turing/2module/projects/national_parks/spec/features/parks/index_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          2,
-          2,
-          null,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/ruezheng/turing/2module/projects/national_parks/spec/features/parks/show_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          2,
-          2,
-          null,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/ruezheng/turing/2module/projects/national_parks/app/models/park.rb": {
         "lines": [
           1,
@@ -448,7 +302,7 @@
           null
         ]
       },
-      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/hikes_controller.rb": {
+      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/parks_controller.rb": {
         "lines": [
           1,
           1,
@@ -456,7 +310,7 @@
           null,
           null,
           1,
-          1,
+          0,
           null,
           null
         ]
@@ -466,32 +320,8 @@
           1,
           null
         ]
-      },
-      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/park_hikes_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/parks_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1652583930
+    "timestamp": 1652586102
   }
 }

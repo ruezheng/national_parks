@@ -15,7 +15,6 @@ RSpec.describe 'the hikes show page' do
   it "displays all attributes of hike_1: name, length_miles, open:, and park_id" do
     visit "/hikes/#{hike_1.id}"
     # save_and_open_page
-
     expect(page).to have_content(hike_1.name)
     expect(page).to have_content(hike_1.length_miles)
     expect(page).to have_content(hike_1.open)
