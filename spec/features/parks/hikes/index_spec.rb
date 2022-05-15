@@ -19,4 +19,24 @@ RSpec.describe 'Park hikes index' do
     expect(page).to have_content(hike_2.open)
     expect(page).to have_content(hike_2.park_id)
   end
+
+  it "displays hikes index link that routes to the hikes index page" do
+    visit '/parks'
+
+    click_on('Hikes')
+    expect(current_path).to eq('/hikes')
+  end
+
+  it "displays parks index link that routes to the parks index page" do
+    visit '/hikes'
+
+    click_on('National Parks')
+    expect(current_path).to eq('/parks')
+  end
+
+#   User Story 10, Parent Child Index Link
+#
+# As a visitor
+# When I visit a parent show page ('/parents/:id')
+# Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
 end

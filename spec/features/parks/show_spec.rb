@@ -29,8 +29,22 @@ RSpec.describe 'the parks show page' do
 
   it 'can see a count of the number of hikes associated with the park' do
     visit "/parks/#{zion.id}"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content(zion.count_hikes)
+  end
+
+  it "displays hikes index link that routes to the hikes index page" do
+    visit '/parks'
+
+    click_on('Hikes')
+    expect(current_path).to eq('/hikes')
+  end
+
+  it "displays parks index link that routes to the parks index page" do
+    visit '/hikes'
+
+    click_on('National Parks')
+    expect(current_path).to eq('/parks')
   end
 end

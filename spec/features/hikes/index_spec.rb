@@ -41,4 +41,18 @@ RSpec.describe 'the hikes index page' do
     expect(page).to have_content(hike_6.open)
     expect(page).to have_content(hike_6.park_id)
   end
+
+  it "displays hikes index link that routes to the hikes index page" do
+    visit '/parks'
+
+    click_on('Hikes')
+    expect(current_path).to eq('/hikes')
+  end
+
+  it "displays parks index link that routes to the parks index page" do
+    visit '/hikes'
+
+    click_on('National Parks')
+    expect(current_path).to eq('/parks')
+  end
 end

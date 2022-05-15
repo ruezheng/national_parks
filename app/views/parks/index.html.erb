@@ -1,5 +1,8 @@
+<ul><a href="/hikes">Hikes</a></ul>
+<ul><a href="/parks">National Parks</a></ul>
+
 <h1>National Parks</h1><br>
 
 <% @parks.each do |park| %>
-	<h2><%= park.name %> <span style="font-size: 16px;"><%= park.created_at %></span></h2>
+	<h3><%= park.name %> <span style="font-size: 14px;"><%= park.created_at %></span></h3>
 <% end %>
