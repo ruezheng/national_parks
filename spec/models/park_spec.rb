@@ -32,10 +32,4 @@ RSpec.describe Park do
       expect(Park.order_by_time_created.to_a).to eq [zion, moab, yosemite, yellowstone]
     end
   end
-
-  describe 'instance methods' do
-    it '#order_by_time_created' do
-      expect(Park.order_by_time_created.to_a).to eq [zion, moab, yosemite, yellowstone]
-    end
-  end
 end

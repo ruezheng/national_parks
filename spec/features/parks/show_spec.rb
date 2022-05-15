@@ -21,36 +21,9 @@ RSpec.describe 'the parks show page' do
     expect(page).to have_content("National Park Pass Required: #{zion.national_park_pass}")
     expect(page).to have_content("Fee: #{zion.fee}")
 
-    # expect(page).to have_content(yellowstone.name)
-    # expect(page).to have_content("Location: #{yellowstone.location}")
-    # expect(page).to have_content("National Park Pass Requirement: #{yellowstone.national_park_pass}")
-    # expect(page).to have_content("Fee: #{yellowstone.fee}")
-    #
-    # expect(page).to have_content(yosemite.name)
-    # expect(page).to have_content("Location: #{yosemite.location}")
-    # expect(page).to have_content("National Park Pass Requirement: #{yosemite.national_park_pass}")
-    # expect(page).to have_content("Fee: #{yosemite.fee}")
-
-
+    expect(page).to_not have_content(yellowstone.name)
+    expect(page).to_not have_content("Location: #{yellowstone.location}")
+    expect(page).to_not have_content("National Park Pass Requirement: #{yellowstone.national_park_pass}")
+    expect(page).to_not have_content("Fee: #{yellowstone.fee}")
   end
-
-  # OR
-  #   it 'displays parks with their name, location, fee, and park pass requirement' do
-  #     visit "/parks/:id"
-  #     # open_and_save_page
-  #
-  #     expect(page).to have_content('Zion National Park')
-  #     expect(page).to have_content('Utah')
-  #     expect(page).to have_content(true)
-  #     expect(page).to have_content('Yellowstone National Park')
-  #     expect(page).to have_content('Wyoming')
-  #     expect(page).to have_content(true)
-  #     expect(page).to have_content('Yosemite National Park')
-  #     expect(page).to have_content('California')
-  #     expect(page).to have_content(false)
-  #     expect(page).to_not have_content('Canyonlands')
-  #
-  #   end
-  # end
-
 end
