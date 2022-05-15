@@ -1,10 +1,10 @@
 <a href="/hikes">Explore Hikes</a><br>
 <a href="/parks">Explore National Parks</a>
 
-<h1>Explore Hikes</h1><br>
+<h1><%= @park.name %>: Hiking Trails</h1><br>
 
 <% @hikes.each do |hike| %>
-  <h3><%= hike.name %></h3>
+  <h2><%= hike.name %></h2>
   <p>Length: <%= hike.length_miles %> miles</p>
   <p>Open: <%= hike.open %></p>
   <p>Park ID: <%= hike.park_id %></p>

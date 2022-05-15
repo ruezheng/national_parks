@@ -1,8 +1,8 @@
-<h1>National Parks</h1>
+<a href="/hikes">Explore Hikes</a><br>
+<a href="/parks">Explore National Parks</a>
+
+<h1>National Parks</h1><br>
 
 <% @parks.each do |park| %>
-	<h3><%= park.name %></h3>
-	<p>Location: <%= park.location %></p>
-	<p>National Park Pass Required: <%= park.national_park_pass %></p>
-  <br>
+	<h3><%= link_to park.name, "/parks/#{park.id}" %> <span style="font-size: 14px;"><%= park.created_at %></span></h3>
 <% end %>

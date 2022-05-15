@@ -3,10 +3,8 @@ class CreateParks < ActiveRecord::Migration[5.2]
     create_table :parks do |t|
       t.string :name
       t.string :location
-      t.decimal :fee
+      t.float :fee
       t.boolean :national_park_pass
-
-      t.timestamps
     end
   end
 end

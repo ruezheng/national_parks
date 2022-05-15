@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Park do
+RSpec.describe "the parks index page", type: :feature do # TODO: Is this good formatting? Is it more important to have the attributes lied up or have no spaces after the create
   let!(:zion) { Park.create!(name: 'Zion National Park', location: 'Utah', national_park_pass: true, fee: 20.00, created_at: 1.seconds.ago) }
   let!(:yellowstone) { Park.create!(name: 'Yellowstone National Park', location: 'Wyoming', national_park_pass: true, fee: 35.00, created_at: 50.seconds.ago) }
   let!(:yosemite) { Park.create!(name: 'Yosemite National Park', location: 'California', national_park_pass: false, fee: 15.00, created_at: 10.seconds.ago) }
@@ -15,27 +15,41 @@ RSpec.describe Park do
   let!(:hike_7) {Hike.create!(name: 'Mesa Arch Trail', length_miles: 0.7, park_id: moab.id, open: true) }
   let!(:hike_8) {Hike.create!(name: 'Dead Horse Rim Loop', length_miles: 5.0, park_id: moab.id, open: true) }
 
-  describe 'relationships' do
-    it { should have_many :hikes }
+  it "displays the names of all parks" do
+    visit "/parks"
+    # save_and_open_page
+
+    expect(page).to have_content(zion.name)
+    expect(page).to have_content(yellowstone.name)
+    expect(page).to have_content(yosemite.name)
+    expect(page).to have_content(moab.name)
   end
 
-  describe 'validations' do
-    it { should validate_presence_of :name }
-    it { should validate_presence_of :location }
-    it { should validate_presence_of :fee }
-    it { should allow_value(true).for(:national_park_pass) }
-    it { should allow_value(false).for(:national_park_pass) }
+  it "orders all parks by most recently created first and displays created_at timestamp next to name of each park" do
+    visit "/parks"
+    # save_and_open_page
+#
+    expect(page).to have_content(zion.name)
+    expect(page).to have_content(zion.created_at)
+    expect(page).to have_content(yellowstone.name)
+    expect(page).to have_content(yellowstone.created_at)
+    expect(page).to have_content(yosemite.name)
+    expect(page).to have_content(yosemite.created_at)
+    expect(page).to have_content(moab.name)
+    expect(page).to have_content(moab.created_at)
   end
 
-  describe '.order_by_time_created' do
-    it 'displays parks ordered by most recently created first' do
-      expect(Park.order_by_time_created.to_a).to eq [zion, moab, yosemite, yellowstone]
-    end
+  it "can see a link at the top of the page that takes me to the Park Index" do
+    visit '/parks'
+
+    click_on('Hikes')
+    expect(current_path).to eq('/hikes')
   end
 
-  describe '#count_hikes' do
-    it 'can see a count of the number of hikes associated with the park' do
-      expect(zion.count_hikes).to eq(2)
-    end
+  it "can see a link at the top of the page that takes me to the Park Index" do
+    visit '/hikes'
+
+    click_on('National Parks')
+    expect(current_path).to eq('/parks')
   end
 end
