@@ -27,11 +27,10 @@ RSpec.describe 'the parks show page' do
     expect(page).to_not have_content("Fee: #{yellowstone.fee}")
   end
 
-  describe 'instance methods' do
+  it 'can see a count of the number of hikes associated with the park' do
     visit "/parks/#{zion.id}"
+    save_and_open_page
 
-    it 'can see a count of the number of hikes associated with the park' do
-      expect(page).to have_content(zion.count_hikes)
-    end
+    expect(page).to have_content(zion.count_hikes)
   end
 end
