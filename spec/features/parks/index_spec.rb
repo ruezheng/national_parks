@@ -14,29 +14,22 @@ RSpec.describe "the parks index page", type: :feature do # TODO: Is this good fo
 
   it "displays the names of all parks" do
     visit "/parks"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content(zion.name)
     expect(page).to have_content(yellowstone.name)
     expect(page).to have_content(yosemite.name)
   end
 
-# User Story 6, Parent Index sorted by Most Recently Created
-#
-# As a visitor
-# When I visit the parent index,
-# I see that records are ordered by most recently created first
-# And next to each of the records I see when it was created
-
   it "displays date created information of all parks" do
     visit "/parks"
-    # save_and_open_page
+    save_and_open_page
 
     expect(page).to have_content(zion.name)
-    expect(page).to have_content(zion.created_)
+    expect(page).to have_content(zion.created_at)
   end
 
-  it "orders all parks by most recently created first" do
+  xit "orders all parks by most recently created first" do
     visit "/parks"
     # save_and_open_page
 
