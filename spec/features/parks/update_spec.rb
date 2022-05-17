@@ -16,9 +16,22 @@ require 'rails_helper'
 RSpec.describe "update parks show page" do
   describe "When I visit the update park form by clicking a link on the show page" do
     it "I can update the info of a park" do
-      visit '/parks/:id'
+      visit "/parks/#{zion.id}"
 
-      click_on
+      click_link('Update Park')
+
+      expect(current_path).to eq('/parks/:id/edit')
+
+      fill_in(:name, with: 'Updated National Park')
+      fill_in(:location, with: 'New York')
+      fill_in(:national_park_pass, with: 'false')
+      fill_in(:fee, with: '45')
+
+      click_on('Update Park')
+
+      expect(current_path).to eq('/parks/:id')
+      exepct(page).to have_content('Updated National Park')
+      exepct(page).to_not have_content('Zion National Park')
     end
   end
 end
