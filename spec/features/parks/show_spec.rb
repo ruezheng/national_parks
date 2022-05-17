@@ -48,7 +48,6 @@ RSpec.describe 'the parks show page' do
     expect(current_path).to eq('/parks')
   end
 
-
   it "can see a link to take me to that park's 'hikes' page " do
     visit "/parks/#{zion.id}"
 
