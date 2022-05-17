@@ -14,7 +14,6 @@ RSpec.describe 'the parks show page' do
 
   it "can see all attributes of each park: name, location, national_park_pass, and fee" do
     visit "/parks/#{zion.id}"
-    # save_and_open_page
 
     expect(page).to have_content(zion.name)
     expect(page).to have_content("Location: #{zion.location}")
@@ -29,7 +28,6 @@ RSpec.describe 'the parks show page' do
 
   it 'can see a count of the number of hikes associated with the park' do
     visit "/parks/#{zion.id}"
-    # save_and_open_page
 
     expect(page).to have_content(zion.count_hikes)
   end

@@ -249,6 +249,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -274,21 +275,13 @@
           null
         ]
       },
-      "/Users/ruezheng/turing/2module/projects/national_parks/app/models/park.rb": {
+      "/Users/ruezheng/turing/2module/projects/national_parks/app/models/hike.rb": {
         "lines": [
           1,
           1,
           null,
           1,
           1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
           null
         ]
       },
@@ -299,54 +292,70 @@
           null
         ]
       },
-      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/parks_controller.rb": {
+      "/Users/ruezheng/turing/2module/projects/national_parks/spec/models/park_spec.rb": {
         "lines": [
           1,
           null,
           1,
-          0,
+          9,
+          9,
+          9,
+          9,
+          null,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
           null,
           null,
           1,
           1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
           1,
           null,
           null,
           null,
           1,
           1,
-          0,
+          1,
+          null,
           null,
           null
         ]
       },
-      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/ruezheng/turing/2module/projects/national_parks/app/models/hike.rb": {
+      "/Users/ruezheng/turing/2module/projects/national_parks/app/models/park.rb": {
         "lines": [
           1,
           1,
           null,
           1,
           1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1652816571
+    "timestamp": 1652826351
   }
 }

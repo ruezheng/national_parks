@@ -7,7 +7,6 @@ RSpec.describe 'Park hikes index' do
 
   it "show all of the attributes of the hikes for the park" do
     visit "/parks/#{zion.id}/hikes"
-    # save_and_open_page
 
     expect(page).to have_content(hike_1.name)
     expect(page).to have_content(hike_1.length_miles)
