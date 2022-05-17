@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/parks/new', to: 'parks#new'
   post '/parks', to: 'parks#create'
   get '/parks/:id', to: 'parks#show'
+  get '/parks/:id/edit', to: 'parks#edit'
 
   get '/hikes', to: 'hikes#index'
   get '/hikes/:id', to: 'hikes#show'

@@ -16,6 +16,10 @@ class ParksController < ApplicationController
     redirect_to '/parks'
   end
 
+  def edit
+
+  end
+
   private
   def parks_params
     params.permit(:name, :location, :national_park_pass, :fee)
