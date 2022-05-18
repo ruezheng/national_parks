@@ -9,6 +9,6 @@ class Park < ApplicationRecord
   end
 
   def count_hikes
-    self.hikes.count
+    self.hikes.size
   end
 end

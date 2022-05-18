@@ -8,7 +8,7 @@ RSpec.describe "update hikes show page" do
 
   it "can click on a link that takes me to an edit form to update a hike" do
     visit "/hikes/#{hike_1.id}"
-save_and_open_page
+
     click_link("Update Hike")
 
     expect(current_path).to eq("/hikes/#{hike_1.id}/edit")
@@ -16,10 +16,10 @@ save_and_open_page
 
   it "can update a hike's name and attributes" do
     visit "/hikes/#{hike_1.id}/edit"
+    # save_and_open_page
 
     fill_in(:name, with: 'Updated Hike')
     fill_in(:length_miles, with: '1')
-    fill_in(:park_id, with: 'zion.id')
     fill_in(:open, with: 'true')
 
     click_on('Update Hike')

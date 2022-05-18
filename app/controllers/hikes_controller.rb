@@ -12,21 +12,21 @@ class HikesController < ApplicationController
   end
 
   def new
-
   end
 
   def create
-
+    Hike.create(hike_params)
+    redirect_to '/hikes'
   end
 
   def update
-    hike = Park.find(params[:id])
-    hike.update(park_params)
+    hike = Hike.find(params[:id])
+    hike.update(hike_params)
     redirect_to "/hikes/#{hike.id}"
   end
 
   private
   def hike_params
-    params.permit(:name, :length_miles, :park_id, :open)
+    params.permit(:name, :length_miles, :open)
   end
 end
