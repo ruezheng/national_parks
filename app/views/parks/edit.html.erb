@@ -1,0 +1,12 @@
+<%= form_with url: "/parks/#{@park.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %><br>
+  <%= form.label :location %><br>
+  <%= form.text_field :location %><br>
+  <%= form.label :national_park_pass %><br>
+  <%= form.text_field :national_park_pass %><br>
+  <%= form.label :fee %><br>
+  <%= form.text_field :fee %><br>
+
+  <%= form.submit 'Update Park' %>
+<% end %>

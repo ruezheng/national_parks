@@ -248,59 +248,20 @@
           1,
           1,
           1,
+          1,
+          1,
+          1,
           null,
           1,
           1,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
           null,
           null
         ]
       },
       "/Users/ruezheng/turing/2module/projects/national_parks/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/parks_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
@@ -330,8 +291,86 @@
           1,
           null
         ]
+      },
+      "/Users/ruezheng/turing/2module/projects/national_parks/app/models/hike.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/park_hikes_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/parks_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/ruezheng/turing/2module/projects/national_parks/app/controllers/hikes_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1652755572
+    "timestamp": 1652840759
   }
 }

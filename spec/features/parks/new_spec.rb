@@ -18,7 +18,6 @@ RSpec.describe 'New Park' do
 
       expect(current_path).to eq('/parks')
       expect(page).to have_content('Glacier National Park')
-      expect(page).to_not have_content('Not a park')
     end
   end
 end

@@ -1,10 +1,12 @@
-<a href="/hikes">Explore Hikes</a><br>
-<a href="/parks">Explore National Parks</a>
+<%= link_to 'Explore Hikes', "/hikes" %><br>
+<%= link_to 'Explore National Parks', "/parks" %><br><br>
 
 <h1><%= @park.name %></h1>
 <p>Location: <%= @park.location %></p>
 <p>Number of Hikes: <%= @park.count_hikes %></p>
 <p>National Park Pass Required: <%= @park.national_park_pass %></p>
-<p>Fee: <%= @park.fee %></p>
+<p>Fee: <%= @park.fee %></p><br>
 
-<a href="/parks/<%= @park.id %>/hikes">Find a Hike</a>
+<%= link_to 'Find a Hike', "/parks/#{@park.id}/hikes" %><br><br>
+
+<%= link_to "Update Park", "/parks/#{@park.id}/edit" %>

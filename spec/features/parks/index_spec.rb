@@ -9,7 +9,6 @@ RSpec.describe "the parks index page" do
 
   it "displays the names of all parks" do
     visit "/parks"
-    # save_and_open_page
 
     expect(page).to have_content(zion.name)
     expect(page).to have_content(yellowstone.name)
@@ -19,8 +18,7 @@ RSpec.describe "the parks index page" do
 
   it "orders all parks by most recently created first and displays created_at timestamp next to name of each park" do
     visit "/parks"
-    # save_and_open_page
-#
+
     expect(page).to have_content(zion.name)
     expect(page).to have_content(zion.created_at)
     expect(page).to have_content(yellowstone.name)

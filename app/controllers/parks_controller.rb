@@ -12,12 +12,22 @@ class ParksController < ApplicationController
   end
 
   def create
-    Park.create(parks_params)
+    Park.create(park_params)
     redirect_to '/parks'
   end
 
-  private
-  def parks_params
+  def edit
+    @park = Park.find(params[:id])
+  end
+
+  def update
+    park = Park.find(params[:id])
+    park.update(park_params)
+    redirect_to "/parks/#{park.id}"
+  end
+
+  # private
+  def park_params
     params.permit(:name, :location, :national_park_pass, :fee)
   end
 end
