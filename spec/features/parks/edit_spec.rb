@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "update parks show page" do
+  
   let!(:zion) { Park.create!(name: 'Zion National Park', location: 'Utah', national_park_pass: true, fee: 20.00) }
 
   it "can see a link to update park" do

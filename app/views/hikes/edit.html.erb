@@ -1,4 +1,4 @@
-<%= form_with url: "/parks/#{@park.id}/hikes", method: :post, local: true do |form| %>
+<%= form_with url: "/hikes/#{@hike.id}", method: :patch, local: true do |form| %>
   <%= form.label :name, "Name: " %><br>
   <%= form.text_field :name %><br>
   <%= form.label :length_miles, "Length (miles): " %><br>
@@ -6,5 +6,5 @@
   <%= form.label :open, "Open: " %><br>
   <%= form.text_field :open %><br>
 
-  <%= form.submit 'Create Hike' %>
+  <%= form.submit 'Update Hike' %>
 <% end %>

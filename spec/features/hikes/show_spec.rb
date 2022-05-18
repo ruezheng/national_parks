@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'the hikes show page' do
+  
   let!(:zion) { Park.create!(name: 'Zion National Park', location: 'Utah', national_park_pass: true, fee: 20.00) }
   let!(:yellowstone) { Park.create!(name: 'Yellowstone National Park', location: 'Wyoming', national_park_pass: true, fee: 35.00) }
   let!(:yosemite) { Park.create!(name: 'Yosemite National Park', location: 'California', national_park_pass: false, fee: 15.00) }
@@ -14,7 +15,7 @@ RSpec.describe 'the hikes show page' do
 
   it "displays all attributes of hike_1: name, length_miles, open:, and park_id" do
     visit "/hikes/#{hike_1.id}"
-    
+
     expect(page).to have_content(hike_1.name)
     expect(page).to have_content(hike_1.length_miles)
     expect(page).to have_content(hike_1.open)
