@@ -56,4 +56,25 @@ RSpec.describe 'the hikes index page' do
     click_on('Explore National Parks')
     expect(current_path).to eq('/parks')
   end
+
+  it "can has a link to update hike under each hike's name" do
+    visit "/hikes/#{hike_1.id}"
+
+    click_link("Update Hike")
+    expect(current_path).to eq("/hikes/#{hike_1.id}/edit")
+
+    visit "/hikes/#{hike_1.id}/edit"
+
+    fill_in(:name, with: 'Updated Hike')
+    fill_in(:length_miles, with: '1')
+    fill_in(:open, with: 'true')
+
+    click_on('Update Hike')
+
+    expect(current_path).to eq("/hikes/#{hike_1.id}")
+    expect(page).to have_content('Updated Hike')
+    expect(page).to have_content('1')
+    expect(page).to have_content('true')
+    expect(page).to_not have_content('Hidden Canyon')
+  end
 end
