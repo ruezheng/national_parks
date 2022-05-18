@@ -3,6 +3,13 @@ class ParkHikesController < ApplicationController
   def index
     @park = Park.find(params[:park_id])
     @hikes = @park.hikes
+    if params[:sort]
+      @hikes = @park.hikes.sort
+    end
+  end
+
+  def sort
+    redirect_to action: "index", sort: true
   end
 
   def new
