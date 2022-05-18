@@ -32,4 +32,37 @@ RSpec.describe 'Park hikes index' do
     click_on('Explore National Parks')
     expect(current_path).to eq('/parks')
   end
+
+# User Story 13, Parent Child Creation
+#
+# As a visitor
+# When I visit a Parent Childs Index page
+# Then I see a link to add a new adoptable child for that parent "Create Child"
+# When I click the link
+# I am taken to '/parents/:parent_id/child_table_name/new' where I see a form to add a new adoptable child
+# When I fill in the form with the child's attributes:
+# And I click the button "Create Child"
+# Then a `POST` request is sent to '/parents/:parent_id/child_table_name',
+# a new child object/row is created for that parent,
+# and I am redirected to the Parent Childs Index page where I can see the new child listed
+
+  describe 'When I visit the new hike form by clicking a link in the park hikes index'
+    it "I can create a new hike for that park" do
+      visit '/parks/:park_id/hikes'
+
+      click_link('Create Hike')
+
+      expect(current_path).to eq("/parks/:park_id/hikes/new")
+
+      fill_in(:name, with: 'New test hike')
+      fill_in(:length_miles, with: 'Montana')
+      fill_in(:park_id, with: 'zion.id')
+      fill_in(:open, with: 'true')
+
+      click_on('Create Hike')
+
+      expect(current_page).to eq('/parks/:park_id/hikes')
+      expect(page).to have_content('New test hike')
+      expect(page).to_not have_content('Glacier National Park')
+    end
 end
