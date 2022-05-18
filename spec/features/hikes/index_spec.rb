@@ -13,38 +13,32 @@ RSpec.describe 'the hikes index page' do
   let!(:hike_5) { Hike.create!(name: 'Half Dome', length_miles: 16, park_id: yosemite.id, open: true) }
   let!(:hike_6) { Hike.create!(name: 'Yosemite Falls', length_miles: 7.2, park_id: yosemite.id, open: true) }
 
-  it "displays all hikes and their attributes: name, length_miles, open:, and park_id" do
+  it "displays all open hikes and their attributes: name, length_miles, open:, and park_id" do
     visit "/hikes"
 
     expect(page).to have_content(hike_1.name)
     expect(page).to have_content(hike_1.length_miles)
     expect(page).to have_content(hike_1.open)
-    expect(page).to have_content(hike_1.park_id)
     expect(page).to have_content(hike_2.name)
     expect(page).to have_content(hike_2.length_miles)
     expect(page).to have_content(hike_2.open)
-    expect(page).to have_content(hike_2.park_id)
-    expect(page).to have_content(hike_3.name)
-    expect(page).to have_content(hike_3.length_miles)
-    expect(page).to have_content(hike_3.open)
-    expect(page).to have_content(hike_3.park_id)
     expect(page).to have_content(hike_4.name)
     expect(page).to have_content(hike_4.length_miles)
     expect(page).to have_content(hike_4.open)
-    expect(page).to have_content(hike_4.park_id)
     expect(page).to have_content(hike_5.name)
     expect(page).to have_content(hike_5.length_miles)
     expect(page).to have_content(hike_5.open)
-    expect(page).to have_content(hike_5.park_id)
     expect(page).to have_content(hike_6.name)
     expect(page).to have_content(hike_6.length_miles)
     expect(page).to have_content(hike_6.open)
-    expect(page).to have_content(hike_6.park_id)
+    expect(page).to_not have_content(hike_3.name)
+    expect(page).to_not have_content(hike_3.length_miles)
+    expect(page).to_not have_content(hike_3.open)
   end
 
   it "when I click on the name of a hike it takes me to that hikes show page" do
     visit '/hikes'
-    
+
     click_link("#{hike_1.name}")
     expect(current_path).to eq("/hikes/#{hike_1.id}")
   end
@@ -61,11 +55,5 @@ RSpec.describe 'the hikes index page' do
 
     click_on('Explore National Parks')
     expect(current_path).to eq('/parks')
-  end
-
-  it "only shows open hikes" do # USER STORY 15
-    visit '/hikes'
-
-    expect(page).to have_content([hike_1, hike_2, hike_4, hike_5, hike_6])
   end
 end

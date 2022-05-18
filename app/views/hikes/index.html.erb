@@ -4,9 +4,11 @@
 <h1>Explore Hikes</h1><br>
 
 <% @hikes.each do |hike| %>
-  <h3><%= link_to hike.name, "/hikes/#{hike.id}" %></h3>
-  <p>Length: <%= hike.length_miles %> miles</p>
-  <p>Open: <%= hike.open %></p>
-  <p>Park ID: <%= hike.park_id %></p>
-  <br>
+  <% if hike.open == true %>
+    <h3><%= link_to hike.name, "/hikes/#{hike.id}" %></h3>
+    <p>Length: <%= hike.length_miles %> miles</p>
+    <p>Open: <%= hike.open %></p>
+    <p>Park ID: <%= hike.park_id %></p>
+    <!-- <br> -->
+  <% end %>
 <% end %>
