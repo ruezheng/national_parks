@@ -9,4 +9,5 @@
 
 <%= link_to 'Find a Hike', "/parks/#{@park.id}/hikes" %><br><br>
 
-<%= link_to "Update Park", "/parks/#{@park.id}/edit" %>
+<%= button_to 'Update Park', "/parks/#{@park.id}/edit", method: :get %>
+<%= button_to "Delete Park", "/parks/#{@park.id}/destroy", method: :delete %>

@@ -9,6 +9,11 @@
     <p>Length: <%= hike.length_miles %> miles</p>
     <p>Open: <%= hike.open %></p>
     <p>Park ID: <%= hike.park_id %></p>
-    <!-- <br> -->
+
+    <%= button_to 'Update Hike', "/hikes/#{hike.id}/edit", method: :get %>
+
+    <%= button_to "Delete Hike", "/hikes/#{hike.id}/destroy", method: :delete %>
+
+    <br>
   <% end %>
 <% end %>
