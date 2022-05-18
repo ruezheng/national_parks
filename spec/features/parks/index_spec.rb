@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "the parks index page" do
-  
+
   let!(:zion) { Park.create!(name: 'Zion National Park', location: 'Utah', national_park_pass: true, fee: 20.00, created_at: 1.seconds.ago) }
   let!(:yellowstone) { Park.create!(name: 'Yellowstone National Park', location: 'Wyoming', national_park_pass: true, fee: 35.00, created_at: 50.seconds.ago) }
   let!(:yosemite) { Park.create!(name: 'Yosemite National Park', location: 'California', national_park_pass: false, fee: 15.00, created_at: 10.seconds.ago) }
@@ -42,5 +42,26 @@ RSpec.describe "the parks index page" do
 
     click_on('National Parks')
     expect(current_path).to eq('/parks')
+  end
+
+#   User Story 17, Parent Update From Parent Index Page
+#
+# As a visitor
+# When I visit the parent index page
+# Next to every parent, I see a link to edit that parent's info
+# When I click the link
+# I should be taken to that parents edit page where I can update its information just like in User Story 4
+
+  it "can see a link to update park's info next to each park" do
+    visit "/park"
+
+    click_on "Update Park"
+    
+    expect(current_path).to eq("/parks/#{zion.id}")
+    expect(page).to have_content('Updated National Park')
+    expect(page).to have_content('New York')
+    expect(page).to have_content('false')
+    expect(page).to have_content('45')
+    expect(page).to_not have_content('Zion National Park')
   end
 end
