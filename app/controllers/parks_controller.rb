@@ -26,7 +26,7 @@ class ParksController < ApplicationController
     redirect_to "/parks/#{park.id}"
   end
 
-  # private
+  private
   def park_params
     params.permit(:name, :location, :national_park_pass, :fee)
   end

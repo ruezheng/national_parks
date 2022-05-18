@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'the hikes index page' do
+
   let!(:zion) { Park.create!(name: 'Zion National Park', location: 'Utah', national_park_pass: true, fee: 20.00) }
   let!(:yellowstone) { Park.create!(name: 'Yellowstone National Park', location: 'Wyoming', national_park_pass: true, fee: 35.00) }
   let!(:yosemite) { Park.create!(name: 'Yosemite National Park', location: 'California', national_park_pass: false, fee: 15.00) }
@@ -41,6 +42,13 @@ RSpec.describe 'the hikes index page' do
     expect(page).to have_content(hike_6.park_id)
   end
 
+  it "when I click on the name of a hike it takes me to that hikes show page" do
+    visit '/hikes'
+    
+    click_link("#{hike_1.name}")
+    expect(current_path).to eq("/hikes/#{hike_1.id}")
+  end
+
   it "can see a link at the top of the page that takes me to the Park Index" do
     visit '/parks'
 
@@ -53,5 +61,11 @@ RSpec.describe 'the hikes index page' do
 
     click_on('Explore National Parks')
     expect(current_path).to eq('/parks')
+  end
+
+  it "only shows open hikes" do # USER STORY 15
+    visit '/hikes'
+
+    expect(page).to have_content([hike_1, hike_2, hike_4, hike_5, hike_6])
   end
 end

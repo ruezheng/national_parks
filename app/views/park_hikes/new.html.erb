@@ -1,0 +1,10 @@
+<%= form_with url: "/parks/#{@park.id}/hikes", method: :post, local: true do |form| %>
+  <%= form.label :name, "Name: " %><br>
+  <%= form.text_field :name %><br>
+  <%= form.label :length_miles, "Length (miles): " %><br>
+  <%= form.text_field :length_miles %><br>
+  <%= form.label :open, "Open: " %><br>
+  <%= form.text_field :open %><br>
+
+  <%= form.submit 'Create Hike' %>
+<% end %>
