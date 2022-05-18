@@ -5,8 +5,10 @@
 
 <% @parks.each do |park| %>
 	<h3><%= link_to park.name, "/parks/#{park.id}" %> <span style="font-size: 14px;"><%= park.created_at %></span></h3>
+	<%= link_to "Update Park", "/parks/#{park.id}/edit" %>
+	<br><br>
 <% end %>
 
-<br>
 
+<br>
 <%= link_to 'New Park', '/parks/new' %>

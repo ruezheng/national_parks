@@ -9,6 +9,7 @@
     <p>Length: <%= hike.length_miles %> miles</p>
     <p>Open: <%= hike.open %></p>
     <p>Park ID: <%= hike.park_id %></p>
-    <!-- <br> -->
+    <%= link_to 'Update Hike', "/hikes/#{hike.id}/edit" %>
+    <br>
   <% end %>
 <% end %>
