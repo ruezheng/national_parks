@@ -10,7 +10,7 @@ RSpec.describe 'new Park creation' do
     it 'I can create a new hike in a park' do
       visit "/parks"
 
-      click_link 'New Park'
+      click_on 'New Park'
 
       expect(current_path).to eq('/parks/new')
 

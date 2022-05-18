@@ -6,10 +6,10 @@ RSpec.describe "update hikes show page" do
   let!(:hike_1) { zion.hikes.create!(name: 'Hidden Canyon', length_miles: 3, open: true) }
   let!(:hike_2) { Hike.create!(name: 'Angels Landing', length_miles: 5.4, park_id: zion.id, open: true) }
 
-  it "can click on a link that takes me to an edit form to update a hike" do
+  it "can click on a button that takes me to an edit form to update a hike" do
     visit "/hikes/#{hike_1.id}"
 
-    click_link("Update Hike")
+    click_on "Update Hike"
 
     expect(current_path).to eq("/hikes/#{hike_1.id}/edit")
   end

@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe "update parks show page" do
-  
+
   let!(:zion) { Park.create!(name: 'Zion National Park', location: 'Utah', national_park_pass: true, fee: 20.00) }
 
-  it "can see a link to update park" do
+  it "can click on a button to update park" do
     visit "/parks/#{zion.id}"
-
-    click_link("Update Park")
+    click_on('Update Park')
 
     expect(current_path).to eq("/parks/#{zion.id}/edit")
   end
