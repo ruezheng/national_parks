@@ -1,6 +1,8 @@
 <%= link_to 'Explore Hikes', "/hikes" %><br>
 <%= link_to 'Explore National Parks', "/parks" %><br><br>
 
+<%= link_to "Sort by Name", "/parks/#{@park.id}/hikes/sort" %>
+
 <h1><%= @park.name %>: Hiking Trails</h1><br>
 
 <% @hikes.each do |hike| %>

@@ -36,6 +36,9 @@ RSpec.describe 'Park hikes index' do
     visit "/parks/#{zion.id}/hikes"
 
     click_on('Sort by Name')
-    expect(current_path).to eq('/parks')
+
+    expect(current_path).to eq("/parks/#{zion.id}/hikes")
+    expect(page.text.index("#{hike_1.name}")).to be < page.text.index("#{hike_2.name}")
+
   end
 end
