@@ -44,19 +44,18 @@ RSpec.describe "the parks index page" do
     expect(current_path).to eq('/parks')
   end
 
-#   User Story 17, Parent Update From Parent Index Page
-#
-# As a visitor
-# When I visit the parent index page
-# Next to every parent, I see a link to edit that parent's info
-# When I click the link
-# I should be taken to that parents edit page where I can update its information just like in User Story 4
-
   it "can see a link to update park's info next to each park" do
-    visit "/park"
+    visit "/parks"
+    click_on "Update Park", match: :first
+
+    expect(current_path).to eq("/parks/#{zion.id}/edit")
+
+    fill_in(:name, with: 'Updated National Park')
+    fill_in(:location, with: 'New York')
+    fill_in(:national_park_pass, with: 'false')
+    fill_in(:fee, with: '45')
 
     click_on "Update Park"
-    
     expect(current_path).to eq("/parks/#{zion.id}")
     expect(page).to have_content('Updated National Park')
     expect(page).to have_content('New York')
